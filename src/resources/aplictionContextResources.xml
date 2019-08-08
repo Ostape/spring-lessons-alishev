@@ -7,11 +7,13 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="testBean"
-          class="com.robosh.entity.Person">
-        <property name="name" value="Petro"/>
-        <property name="surname" value="Pupkin"/>
-    </bean>
+<context:property-placeholder location="classpath:human.properties"/>
+
+<bean id="testBean"
+      class="com.robosh.entity.Person">
+    <property name="name" value="${human.name}"/>
+    <property name="surname" value="${human.surname}"/>
+</bean>
 
 
 
